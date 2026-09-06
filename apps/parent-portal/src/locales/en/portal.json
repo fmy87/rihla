@@ -1,0 +1,84 @@
+{
+  "appName": "Rihla",
+  "portalTitle": "Parent Portal",
+  "login": {
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "submit": "Sign in",
+    "submitting": "Signing in…",
+    "helpText": "Parent accounts are created by your school's transport office, or by accepting an invite link they sent you. Contact them if you don't have login details yet.",
+    "forgotPassword": "Forgot password?",
+    "forgotPasswordSending": "Sending…",
+    "forgotPasswordSent": "If that email has an account, a reset link is on its way.",
+    "forgotPasswordNeedsEmail": "Enter your email above first, then tap \"Forgot password?\"."
+  },
+  "topBar": {
+    "signedInAs": "Signed in as {{email}}",
+    "signOut": "Sign out"
+  },
+  "dashboard": {
+    "loading": "Loading…",
+    "noChildren": "No children are linked to your account yet. Contact your school's transport office to have your account connected.",
+    "noScheduleToday": "No route scheduled for today.",
+    "busLine": "Bus {{busNumber}} · {{driverName}}",
+    "driverNotAssigned": "Driver not assigned",
+    "stopLine": "Stop: {{stopName}}",
+    "scheduledSuffix": " · scheduled {{time}}",
+    "lastSeen": "Bus last seen {{time}}"
+  },
+  "status": {
+    "pending": "Waiting for pickup",
+    "picked_up": "Picked up",
+    "dropped_off": "Dropped off at school",
+    "absent": "Marked absent",
+    "cancelled": "Cancelled",
+    "not_confirmed": "Not confirmed",
+    "exception": "Exception — check with school"
+  },
+  "invite": {
+    "verifying": "Checking your invite link…",
+    "invalidTitle": "This invite link isn't valid",
+    "invalidBody": "It may have already been used, or it's expired. Ask your school's transport office for a new one.",
+    "welcomeTitle": "You've been invited",
+    "welcomeBody": "{{schoolName}} has invited you to the parent portal for {{studentName}}.",
+    "fullNameLabel": "Your full name",
+    "fullNameHint": "Only needed if this is your first child on the portal — skip it if you already have a Rihla parent account.",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "passwordHint": "At least 8 characters. If you already have an account with this email, enter that account's password to link this child to it.",
+    "submit": "Create account / link child",
+    "submitting": "Setting up your account…",
+    "successTitle": "You're all set",
+    "successBody": "{{studentName}} is now linked to your account. Signing you in…",
+    "errors": {
+      "invite_not_found": "This invite link doesn't exist.",
+      "invite_already_used": "This invite link has already been used.",
+      "invite_expired": "This invite link has expired.",
+      "invalid_input": "Please check your email and use a password of at least 8 characters.",
+      "full_name_required": "Please enter your full name.",
+      "existing_account_wrong_password": "An account with this email already exists, but that password is incorrect.",
+      "auth_create_failed": "Couldn't create your account. Please try again.",
+      "profile_create_failed": "Couldn't finish setting up your account. Please try again.",
+      "link_failed": "Your account was created, but linking your child failed. Contact your school's transport office.",
+      "unexpected": "Something went wrong. Please try again.",
+      "too_many_attempts": "Too many attempts on this invite. Ask your school for a new invite link."
+    }
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "resetPassword": {
+    "waitingForLink": "Checking your reset link…",
+    "title": "Set a new password",
+    "newPasswordLabel": "New password",
+    "confirmPasswordLabel": "Confirm new password",
+    "submit": "Set password",
+    "submitting": "Setting password…",
+    "mismatchError": "Those passwords don't match.",
+    "tooShortError": "Password must be at least 8 characters.",
+    "successTitle": "Password updated",
+    "successBody": "Signing you in…"
+  }
+}

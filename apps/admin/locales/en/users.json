@@ -1,0 +1,13 @@
+{
+  "addUser": "Add User",
+  "fullName": "Full Name",
+  "email": "Email",
+  "role": "Role",
+  "status": "Status",
+  "active": "Active",
+  "inactive": "Inactive",
+  "activate": "Activate",
+  "deactivate": "Deactivate",
+  "createFailed": "Could not create the account. The email may already be in use.",
+  "accountCreated": "Account created. Share this one-time link with the new user so they can set their password:"
+}

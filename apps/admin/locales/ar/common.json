@@ -1,0 +1,35 @@
+{
+  "appName": "رحلة",
+  "language": "اللغة",
+  "english": "English",
+  "arabic": "العربية",
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "liveTracking": "التتبع المباشر",
+    "routes": "المسارات",
+    "buses": "الحافلات",
+    "drivers": "السائقون",
+    "students": "الطلاب",
+    "stops": "المحطات",
+    "dailyOperations": "العمليات اليومية",
+    "attendance": "الحضور",
+    "alerts": "التنبيهات",
+    "reports": "التقارير",
+    "users": "المستخدمون",
+    "settings": "الإعدادات",
+    "signOut": "تسجيل الخروج"
+  },
+  "roles": {
+    "super_admin": "مدير عام",
+    "transport_admin": "مدير النقل",
+    "driver": "سائق"
+  },
+  "common": {
+    "loading": "جارٍ التحميل…",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "error": "حدث خطأ ما",
+    "required": "هذا الحقل مطلوب"
+  }
+}

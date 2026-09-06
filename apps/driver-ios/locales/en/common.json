@@ -1,0 +1,35 @@
+{
+  "appName": "Rihla",
+  "language": "Language",
+  "english": "English",
+  "arabic": "العربية",
+  "nav": {
+    "dashboard": "Dashboard",
+    "liveTracking": "Live Tracking",
+    "routes": "Routes",
+    "buses": "Buses",
+    "drivers": "Drivers",
+    "students": "Students",
+    "stops": "Stops",
+    "dailyOperations": "Daily Operations",
+    "attendance": "Attendance",
+    "alerts": "Alerts",
+    "reports": "Reports",
+    "users": "Users",
+    "settings": "Settings",
+    "signOut": "Sign Out"
+  },
+  "roles": {
+    "super_admin": "Super Admin",
+    "transport_admin": "Transport Admin",
+    "driver": "Driver"
+  },
+  "common": {
+    "loading": "Loading…",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "error": "Something went wrong",
+    "required": "This field is required"
+  }
+}

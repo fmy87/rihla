@@ -1,0 +1,12 @@
+{
+  "name": "@rihla/scripts",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Dev/demo tooling for Rihla — not part of either shipped app.",
+  "scripts": {
+    "gps-simulator": "node gps-simulator.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}

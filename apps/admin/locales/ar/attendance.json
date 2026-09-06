@@ -1,0 +1,28 @@
+{
+  "title": "الحضور",
+  "pendingSummary_one": "طالب واحد ما زال قيد الانتظار أو غير مؤكد اليوم.",
+  "pendingSummary_two": "طالبان ما زالا قيد الانتظار أو غير مؤكدين اليوم.",
+  "pendingSummary_few": "{{count}} طلاب ما زالوا قيد الانتظار أو غير مؤكدين اليوم.",
+  "pendingSummary_many": "{{count}} طالبًا ما زالوا قيد الانتظار أو غير مؤكدين اليوم.",
+  "pendingSummary_other": "{{count}} طالب ما زالوا قيد الانتظار أو غير مؤكدين اليوم.",
+  "searchPlaceholder": "ابحث عن طالب…",
+  "allRoutes": "كل المسارات",
+  "allStatuses": "كل الحالات",
+  "table": {
+    "student": "الطالب",
+    "route": "المسار",
+    "stop": "المحطة",
+    "scheduled": "الوقت المجدول",
+    "status": "الحالة"
+  },
+  "empty": "لا يوجد طلاب مطابقون لهذه الفلاتر.",
+  "status": {
+    "pending": "قيد الانتظار",
+    "picked_up": "تم الاصطحاب",
+    "dropped_off": "تم التوصيل",
+    "absent": "غائب",
+    "cancelled": "ملغى",
+    "not_confirmed": "غير مؤكد",
+    "exception": "استثناء"
+  }
+}

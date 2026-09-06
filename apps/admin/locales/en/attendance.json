@@ -1,0 +1,25 @@
+{
+  "title": "Attendance",
+  "pendingSummary_one": "{{count}} student still pending or unconfirmed today.",
+  "pendingSummary_other": "{{count}} students still pending or unconfirmed today.",
+  "searchPlaceholder": "Search student…",
+  "allRoutes": "All routes",
+  "allStatuses": "All statuses",
+  "table": {
+    "student": "Student",
+    "route": "Route",
+    "stop": "Stop",
+    "scheduled": "Scheduled",
+    "status": "Status"
+  },
+  "empty": "No students match these filters.",
+  "status": {
+    "pending": "pending",
+    "picked_up": "picked up",
+    "dropped_off": "dropped off",
+    "absent": "absent",
+    "cancelled": "cancelled",
+    "not_confirmed": "not confirmed",
+    "exception": "exception"
+  }
+}

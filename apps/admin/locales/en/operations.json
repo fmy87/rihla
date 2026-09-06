@@ -1,0 +1,23 @@
+{
+  "title": "Daily Operations",
+  "empty": "No routes are scheduled for today. Generate today's route from a route's editor page in Routes.",
+  "noStops": "No stops.",
+  "skipped": "(skipped)",
+  "viewInAttendance": "View in Attendance dashboard →",
+  "viewReplay": "Replay route →",
+  "studentStatus": {
+    "pending": "pending",
+    "picked_up": "picked up",
+    "dropped_off": "dropped off",
+    "absent": "absent",
+    "cancelled": "cancelled",
+    "not_confirmed": "not confirmed",
+    "exception": "exception"
+  },
+  "replay": {
+    "title": "Route Replay",
+    "empty": "No GPS history for this route yet.",
+    "play": "Play",
+    "pause": "Pause"
+  }
+}

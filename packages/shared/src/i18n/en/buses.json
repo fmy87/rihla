@@ -1,0 +1,19 @@
+{
+  "addBus": "Add Bus",
+  "editBus": "Edit Bus",
+  "busNumber": "Bus Number",
+  "registration": "Registration",
+  "nicknameEn": "Nickname (English)",
+  "nicknameAr": "Nickname (Arabic)",
+  "capacity": "Capacity",
+  "driver": "Driver",
+  "unassigned": "Unassigned",
+  "assistant": "Assistant / Attendant",
+  "notes": "Notes",
+  "status": "Status",
+  "inactive": "Inactive",
+  "edit": "Edit",
+  "activate": "Activate",
+  "deactivate": "Deactivate",
+  "empty": "No buses yet. Add your first bus to get started."
+}

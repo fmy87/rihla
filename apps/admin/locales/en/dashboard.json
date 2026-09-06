@@ -1,0 +1,35 @@
+{
+  "overview": {
+    "title": "Today's Overview",
+    "activeBuses": "Active Buses",
+    "onRoute": "On Route",
+    "completed": "Completed",
+    "notStarted": "Not Started",
+    "delayed": "Delayed",
+    "studentsTransported": "Students Transported",
+    "pendingPickup": "Pending Pickup",
+    "absentees": "Absentees",
+    "routeDeviations": "Route Deviations"
+  },
+  "liveMap": "Live Bus Map",
+  "activeRoutes": {
+    "title": "Active Routes",
+    "route": "Route",
+    "bus": "Bus",
+    "driver": "Driver",
+    "progress": "Progress",
+    "status": "Status",
+    "nextStop": "Next Stop",
+    "empty": "No routes are running today yet."
+  },
+  "status": {
+    "not_started": "Not Started",
+    "preparing": "Preparing",
+    "on_route": "On Route",
+    "delayed": "Delayed",
+    "completed": "Completed",
+    "offline": "Offline",
+    "emergency": "Emergency",
+    "cancelled": "Cancelled"
+  }
+}

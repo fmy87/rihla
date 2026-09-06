@@ -1,0 +1,21 @@
+{
+  "addDriver": "Add Driver",
+  "employeeId": "Employee ID",
+  "fullName": "Full Name",
+  "phone": "Phone",
+  "pin": "PIN (min 6 characters)",
+  "pinHint": "The driver will use this PIN with their Employee ID to sign in on the iPad app.",
+  "pinTooShort": "PIN must be at least 6 characters.",
+  "licenseNumber": "License Number",
+  "licenseExpiry": "License Expiry",
+  "login": "Login",
+  "loginActive": "Active",
+  "loginMissing": "Not set up",
+  "status": "Status",
+  "active": "Active",
+  "inactive": "Inactive",
+  "activate": "Activate",
+  "deactivate": "Deactivate",
+  "createFailed": "Could not create the driver account. Check the Employee ID isn't already in use.",
+  "empty": "No drivers yet. Add your first driver to get started."
+}

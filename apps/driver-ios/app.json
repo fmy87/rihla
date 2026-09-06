@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Rihla Driver",
+    "slug": "rihla-driver",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rihla.driver",
+      "config": {
+        "googleMapsApiKey": "REPLACE_WITH_IOS_GOOGLE_MAPS_API_KEY"
+      },
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Use Face ID to sign in quickly to your assigned route.",
+        "NSLocationWhenInUseUsageDescription": "Used to show your bus position on the route map while the app is open.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Used to continue sending your bus's location to dispatch when the iPad is locked, so the school can track the route in real time.",
+        "UIBackgroundModes": ["location", "fetch"]
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Rihla Driver to track your route location, including when the app is in the background, so dispatch can follow the bus in real time.",
+          "locationWhenInUsePermission": "Allow Rihla Driver to show your position on the route map while the app is open.",
+          "isIosBackgroundLocationEnabled": true
+        }
+      ]
+    ],
+    "extra": {
+      "eas": { "projectId": "REPLACE_WITH_EAS_PROJECT_ID" }
+    }
+  }
+}

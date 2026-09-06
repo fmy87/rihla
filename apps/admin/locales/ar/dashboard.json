@@ -1,0 +1,35 @@
+{
+  "overview": {
+    "title": "نظرة عامة على اليوم",
+    "activeBuses": "الحافلات النشطة",
+    "onRoute": "في المسار",
+    "completed": "مكتملة",
+    "notStarted": "لم تبدأ",
+    "delayed": "متأخرة",
+    "studentsTransported": "الطلاب المنقولون",
+    "pendingPickup": "بانتظار الاصطحاب",
+    "absentees": "الغائبون",
+    "routeDeviations": "الانحرافات عن المسار"
+  },
+  "liveMap": "خريطة التتبع المباشر",
+  "activeRoutes": {
+    "title": "المسارات النشطة",
+    "route": "المسار",
+    "bus": "الحافلة",
+    "driver": "السائق",
+    "progress": "التقدم",
+    "status": "الحالة",
+    "nextStop": "المحطة التالية",
+    "empty": "لا توجد مسارات تعمل اليوم بعد."
+  },
+  "status": {
+    "not_started": "لم تبدأ",
+    "preparing": "قيد التحضير",
+    "on_route": "في المسار",
+    "delayed": "متأخرة",
+    "completed": "مكتملة",
+    "offline": "غير متصلة",
+    "emergency": "حالة طوارئ",
+    "cancelled": "ملغاة"
+  }
+}

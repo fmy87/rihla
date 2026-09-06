@@ -1,0 +1,221 @@
+workflows:
+  # ---------------------------------------------------------------------
+  # Driver iOS app — development build (internal testing / TestFlight-free)
+  # ---------------------------------------------------------------------
+  driver-ios-dev:
+    name: Driver iOS - Development Build
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    environment:
+      groups:
+        - driver_ios_secrets # EXPO_PUBLIC_SUPABASE_URL, EXPO_PUBLIC_SUPABASE_ANON_KEY,
+          # EXPO_PUBLIC_MAP_API_KEY, EXPO_PUBLIC_SCHOOL_ID — set these under
+          # Codemagic → Teams → Environment variables → group "driver_ios_secrets"
+        - eas_credentials # EXPO_TOKEN — a token generated with `eas login` + `npx eas whoami --json`
+      vars:
+        EXPO_NO_TELEMETRY: "1"
+      node: 20.11.1
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: develop
+          include: true
+        - pattern: "feature/*"
+          include: true
+      cancel_previous_builds: true
+    scripts:
+      - name: Install dependencies
+        script: |
+          cd apps/driver-ios
+          npm install
+      - name: Run tests
+        script: |
+          cd apps/driver-ios
+          npm test -- --ci
+      - name: Prebuild (generates native ios/ project)
+        script: |
+          cd apps/driver-ios
+          npx expo prebuild --platform ios
+      - name: Build (development profile, local)
+        script: |
+          cd apps/driver-ios
+          eas build --platform ios --profile development --local --non-interactive --output=build/Rihla-driver-dev.ipa
+    artifacts:
+      - apps/driver-ios/build/*.ipa
+    publishing:
+      email:
+        recipients:
+          - dev@rihla.app
+        notify:
+          success: true
+          failure: true
+
+  # ---------------------------------------------------------------------
+  # Driver iOS app — production build + TestFlight submission
+  # ---------------------------------------------------------------------
+  driver-ios-production:
+    name: Driver iOS - Production (TestFlight)
+    instance_type: mac_mini_m2
+    max_build_duration: 90
+    environment:
+      groups:
+        - driver_ios_secrets
+        - eas_credentials
+        - app_store_connect # APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_IDENTIFIER,
+          # APP_STORE_CONNECT_PRIVATE_KEY — from an App Store Connect API key with
+          # "App Manager" access, added under Codemagic → Team integrations
+      vars:
+        EXPO_NO_TELEMETRY: "1"
+      node: 20.11.1
+    triggering:
+      events:
+        - tag
+      tag_patterns:
+        - pattern: "driver-v*"
+          include: true
+      cancel_previous_builds: false
+    scripts:
+      - name: Install dependencies
+        script: |
+          cd apps/driver-ios
+          npm install
+      - name: Run tests
+        script: |
+          cd apps/driver-ios
+          npm test -- --ci
+      - name: Prebuild (generates native ios/ project)
+        script: |
+          cd apps/driver-ios
+          npx expo prebuild --platform ios
+      - name: Build (production profile)
+        script: |
+          cd apps/driver-ios
+          eas build --platform ios --profile production --local --non-interactive --output=build/Rihla-driver.ipa
+    artifacts:
+      - apps/driver-ios/build/*.ipa
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        # Flip to true once the app has passed internal TestFlight review
+        # and you're ready to submit for App Store review:
+        submit_to_app_store: false
+      email:
+        recipients:
+          - dev@rihla.app
+        notify:
+          success: true
+          failure: true
+
+  # ---------------------------------------------------------------------
+  # Admin web portal — build + smoke test (deploy step is a placeholder;
+  # fill in SFTP/FTP credentials for your Hostinger account to auto-deploy,
+  # or drop the "Upload to Hostinger" step and upload apps/admin/dist by
+  # hand as documented in docs/deployment.md).
+  # ---------------------------------------------------------------------
+  admin-web:
+    name: Admin Web - Build & Test
+    instance_type: linux_x2
+    max_build_duration: 30
+    environment:
+      groups:
+        - admin_web_secrets # VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY, VITE_MAP_API_KEY
+      node: 20.11.1
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+        - pattern: develop
+          include: true
+      cancel_previous_builds: true
+    scripts:
+      - name: Install dependencies
+        script: |
+          cd apps/admin
+          npm install
+      - name: Type check
+        script: |
+          cd apps/admin
+          npx tsc --noEmit
+      - name: Run tests
+        script: |
+          cd apps/admin
+          npx vitest run
+      - name: Build
+        script: |
+          cd apps/admin
+          npm run build
+      - name: Upload to Hostinger (optional — requires HOSTINGER_SFTP_* vars)
+        script: |
+          if [ -z "$HOSTINGER_SFTP_HOST" ]; then
+            echo "HOSTINGER_SFTP_HOST not set — skipping auto-deploy. See docs/deployment.md for manual upload steps."
+            exit 0
+          fi
+          cd apps/admin/dist
+          sshpass -p "$HOSTINGER_SFTP_PASSWORD" sftp -o StrictHostKeyChecking=no \
+            -P "${HOSTINGER_SFTP_PORT:-22}" "$HOSTINGER_SFTP_USER@$HOSTINGER_SFTP_HOST" <<EOF
+          cd public_html
+          put -r *
+          bye
+          EOF
+    artifacts:
+      - apps/admin/dist/**
+    publishing:
+      email:
+        recipients:
+          - dev@rihla.app
+        notify:
+          success: true
+          failure: true
+
+  # ---------------------------------------------------------------------
+  # Parent portal — build + smoke test (same shape as admin-web; separate
+  # workflow because it deploys to its own subdomain/host with its own
+  # env vars — see apps/parent-portal/README.md).
+  # ---------------------------------------------------------------------
+  parent-portal-web:
+    name: Parent Portal - Build & Test
+    instance_type: linux_x2
+    max_build_duration: 20
+    environment:
+      groups:
+        - parent_portal_secrets # VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY
+      node: 20.11.1
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+        - pattern: develop
+          include: true
+      cancel_previous_builds: true
+    scripts:
+      - name: Install dependencies
+        script: |
+          cd apps/parent-portal
+          npm install
+      - name: Type check
+        script: |
+          cd apps/parent-portal
+          npx tsc -b
+      - name: Run tests
+        script: |
+          cd apps/parent-portal
+          npm test
+      - name: Build
+        script: |
+          cd apps/parent-portal
+          npm run build
+    artifacts:
+      - apps/parent-portal/dist/**
+    publishing:
+      email:
+        recipients:
+          - dev@rihla.app
+        notify:
+          success: true
+          failure: true
