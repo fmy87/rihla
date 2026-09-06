@@ -163,7 +163,7 @@ export default function ReportsPage() {
 
   return (
     <AppLayout>
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-semibold text-slate-900">Reports</h1>
         <div className="flex gap-2">
           <button onClick={handleExport} className={primaryButtonClass}>
@@ -220,6 +220,7 @@ export default function ReportsPage() {
           )}
 
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <div className="overflow-x-auto">
             {tab === 'attendance' && (
               <table className="w-full text-start text-sm">
                 <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
@@ -355,6 +356,7 @@ export default function ReportsPage() {
                 </tbody>
               </table>
             )}
+            </div>
           </div>
 
           <p className="mt-3 text-xs text-slate-400">

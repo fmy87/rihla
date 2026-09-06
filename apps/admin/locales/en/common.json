@@ -17,7 +17,9 @@
     "reports": "Reports",
     "users": "Users",
     "settings": "Settings",
-    "signOut": "Sign Out"
+    "signOut": "Sign Out",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "roles": {
     "super_admin": "Super Admin",

@@ -79,6 +79,7 @@ export default function UsersPage() {
         <div className="text-sm text-slate-400">{t('common:loading')}</div>
       ) : (
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <div className="overflow-x-auto">
           <table className="w-full text-start text-sm">
             <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
               <tr>
@@ -114,6 +115,7 @@ export default function UsersPage() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       )}
 

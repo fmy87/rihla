@@ -303,11 +303,11 @@ export default function RouteEditorPage() {
                   <button className="flex-1 text-start" onClick={() => setSelectedStopId(stop.id)}>
                     {stop.sequence}. {stop.name_en}
                   </button>
-                  <div className="flex gap-1">
+                  <div className="flex gap-0.5">
                     <button
                       onClick={() => handleMove(stop.id, -1)}
                       disabled={idx === 0}
-                      className="px-1 disabled:opacity-30"
+                      className="rounded p-1.5 disabled:opacity-30"
                       aria-label={t('routes:moveUp')}
                     >
                       ↑
@@ -315,7 +315,7 @@ export default function RouteEditorPage() {
                     <button
                       onClick={() => handleMove(stop.id, 1)}
                       disabled={idx === orderedStops.length - 1}
-                      className="px-1 disabled:opacity-30"
+                      className="rounded p-1.5 disabled:opacity-30"
                       aria-label={t('routes:moveDown')}
                     >
                       ↓

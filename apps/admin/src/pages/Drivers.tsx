@@ -87,6 +87,7 @@ export default function DriversPage() {
         <div className="text-sm text-slate-400">{t('common:loading')}</div>
       ) : (
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <div className="overflow-x-auto">
           <table className="w-full text-start text-sm">
             <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
               <tr>
@@ -131,13 +132,14 @@ export default function DriversPage() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       )}
 
       {showForm && (
         <Modal title={t('drivers:addDriver')} onClose={() => setShowForm(false)}>
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label className={labelClass}>{t('drivers:fullName')}</label>
                 <input
@@ -158,7 +160,7 @@ export default function DriversPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label className={labelClass}>{t('drivers:pin')}</label>
                 <input
@@ -181,7 +183,7 @@ export default function DriversPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label className={labelClass}>{t('drivers:licenseNumber')}</label>
                 <input

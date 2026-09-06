@@ -82,6 +82,7 @@ export default function DashboardPage() {
 
           <h2 className="mb-3 text-lg font-semibold text-slate-900">{t('dashboard:activeRoutes.title')}</h2>
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <div className="overflow-x-auto">
             <table className="w-full text-start text-sm">
               <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
                 <tr>
@@ -117,6 +118,7 @@ export default function DashboardPage() {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         </>
       )}

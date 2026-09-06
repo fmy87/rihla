@@ -17,7 +17,9 @@
     "reports": "التقارير",
     "users": "المستخدمون",
     "settings": "الإعدادات",
-    "signOut": "تسجيل الخروج"
+    "signOut": "تسجيل الخروج",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة"
   },
   "roles": {
     "super_admin": "مدير عام",

@@ -85,7 +85,7 @@ export default function RoutesPage() {
       {showForm && (
         <Modal title={t('routes:addRoute')} onClose={() => setShowForm(false)}>
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label className={labelClass}>{t('routes:nameEn')}</label>
                 <input
