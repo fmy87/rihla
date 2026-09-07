@@ -11,6 +11,7 @@
   "assistant": "Assistant / Attendant",
   "notes": "Notes",
   "status": "Status",
+  "active": "Active",
   "inactive": "Inactive",
   "edit": "Edit",
   "activate": "Activate",

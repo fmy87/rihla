@@ -131,7 +131,7 @@ export default function BusesPage() {
                   <td className="px-4 py-3 text-slate-600">{bus.driver_name ?? '—'}</td>
                   <td className="px-4 py-3">
                     <span className={statusBadgeClass(bus.is_active)}>
-                      {bus.is_active ? t('common:common.confirm') : t('buses:inactive')}
+                      {bus.is_active ? t('buses:active') : t('buses:inactive')}
                     </span>
                   </td>
                   <td className="px-4 py-3 text-end">
