@@ -11,6 +11,7 @@ import enUsers from '../../locales/en/users.json';
 import enRoutes from '../../locales/en/routes.json';
 import enOperations from '../../locales/en/operations.json';
 import enAttendance from '../../locales/en/attendance.json';
+import enSettings from '../../locales/en/settings.json';
 
 import arCommon from '../../locales/ar/common.json';
 import arAuth from '../../locales/ar/auth.json';
@@ -22,6 +23,7 @@ import arUsers from '../../locales/ar/users.json';
 import arRoutes from '../../locales/ar/routes.json';
 import arOperations from '../../locales/ar/operations.json';
 import arAttendance from '../../locales/ar/attendance.json';
+import arSettings from '../../locales/ar/settings.json';
 
 export const RTL_LANGUAGES = ['ar'];
 
@@ -44,6 +46,7 @@ i18n.use(initReactI18next).init({
       routes: enRoutes,
       operations: enOperations,
       attendance: enAttendance,
+      settings: enSettings,
     },
     ar: {
       common: arCommon,
@@ -56,11 +59,12 @@ i18n.use(initReactI18next).init({
       routes: arRoutes,
       operations: arOperations,
       attendance: arAttendance,
+      settings: arSettings,
     },
   },
   lng: localStorage.getItem('preferred_language') || 'en',
   fallbackLng: 'en',
-  ns: ['common', 'auth', 'dashboard', 'buses', 'drivers', 'students', 'users', 'routes', 'operations', 'attendance'],
+  ns: ['common', 'auth', 'dashboard', 'buses', 'drivers', 'students', 'users', 'routes', 'operations', 'attendance', 'settings'],
   defaultNS: 'common',
   interpolation: { escapeValue: false },
 });

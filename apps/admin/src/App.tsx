@@ -15,6 +15,7 @@ import RouteReplayPage from './pages/RouteReplay';
 import AttendancePage from './pages/Attendance';
 import AlertsPage from './pages/Alerts';
 import ReportsPage from './pages/Reports';
+import SettingsPage from './pages/Settings';
 import PlaceholderPage from './pages/PlaceholderPage';
 import './lib/i18n';
 
@@ -147,7 +148,7 @@ export default function App() {
             path="/settings"
             element={
               <ProtectedRoute allowRoles={['super_admin']}>
-                <PlaceholderPage titleKey="settings" phaseLabel="Phase 12 (System Settings polish, alongside Reports/Alerts config)" />
+                <SettingsPage />
               </ProtectedRoute>
             }
           />

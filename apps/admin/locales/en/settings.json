@@ -1,0 +1,22 @@
+{
+  "title": "Settings",
+  "subtitle": "Operational thresholds used across live tracking, alerts, and route deviation detection for your school.",
+  "gpsUpdateInterval": "GPS Update Interval",
+  "gpsUpdateIntervalHelp": "How often a driver's app is expected to send a location ping.",
+  "stopGeofenceRadius": "Stop Geofence Radius",
+  "stopGeofenceRadiusHelp": "How close a bus must be to a stop's coordinates to count as arrived.",
+  "routeDeviationThreshold": "Route Deviation Threshold",
+  "routeDeviationThresholdHelp": "How far off the planned route line a bus can be before a deviation alert fires.",
+  "pickupGracePeriod": "Pickup Grace Period",
+  "pickupGracePeriodHelp": "How long past a stop's scheduled time a pending pickup is allowed before it's flagged.",
+  "busOfflineThreshold": "Bus Offline Threshold",
+  "busOfflineThresholdHelp": "How long without a GPS ping before a bus is marked offline.",
+  "seconds": "seconds",
+  "meters": "meters",
+  "minutes": "minutes",
+  "save": "Save Changes",
+  "saved": "Settings saved.",
+  "saveError": "Couldn't save settings. Please try again.",
+  "lastUpdated": "Last updated {{time}}",
+  "loadError": "Couldn't load settings for your school."
+}
