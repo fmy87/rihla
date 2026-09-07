@@ -1,7 +1,8 @@
 {
   "expo": {
     "name": "Rihla Driver",
-    "slug": "rihla-driver",
+    "slug": "rihal",
+    "owner": "fmy87",
     "version": "0.1.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
