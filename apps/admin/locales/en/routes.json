@@ -45,5 +45,12 @@
   "generateToday": "Generate Today's Route",
   "generateNeedsBusDriver": "Assign a default bus and driver first.",
   "generateSuccess": "Today's route has been generated (or already existed) — the driver will see it in the app.",
-  "generateFailed": "Could not generate today's route: {{detail}}"
+  "generateFailed": "Could not generate today's route: {{detail}}",
+  "allRoutes": "All routes",
+  "manageHint": "Stops are managed inside each route's editor — this is a read-only overview across all routes.",
+  "openEditor": "Open in Route Editor",
+  "route": "Route",
+  "stopName": "Stop",
+  "address": "Address",
+  "overviewEmpty": "No stops yet. Open a route to add its first stop."
 }

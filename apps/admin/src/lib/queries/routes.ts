@@ -72,6 +72,61 @@ export interface RouteStopRow {
   notes: string | null;
 }
 
+export interface AllStopsRow {
+  id: string;
+  route_id: string;
+  route_name_en: string;
+  route_name_ar: string | null;
+  bus_number: string | null;
+  is_route_active: boolean;
+  sequence: number;
+  name_en: string;
+  name_ar: string | null;
+  address: string | null;
+  estimated_arrival_time: string | null;
+  stop_type: 'pickup' | 'dropoff';
+}
+
+/** Read-only, cross-route view of every stop for the school — used by the
+ *  Stops overview page. Actual add/edit/reorder/delete stays in the Route
+ *  Editor (a stop only ever exists in the context of one route, so there's
+ *  no standalone "create a stop" flow independent of picking a route). */
+export async function fetchAllStopsForSchool(schoolId: string): Promise<AllStopsRow[]> {
+  const routes = await fetchRoutes(schoolId);
+  if (routes.length === 0) return [];
+
+  const routeById = new Map(routes.map((r) => [r.id, r]));
+
+  const { data, error } = await supabase
+    .from('route_stops_with_coords')
+    .select('id, route_id, sequence, name_en, name_ar, address, estimated_arrival_time, stop_type')
+    .in('route_id', routes.map((r) => r.id));
+
+  if (error || !data) return [];
+
+  return data
+    .map((stop) => {
+      const route = routeById.get(stop.route_id);
+      if (!route) return null;
+      return {
+        id: stop.id,
+        route_id: stop.route_id,
+        route_name_en: route.name_en,
+        route_name_ar: route.name_ar,
+        bus_number: route.bus_number,
+        is_route_active: route.is_active,
+        sequence: stop.sequence,
+        name_en: stop.name_en,
+        name_ar: stop.name_ar,
+        address: stop.address,
+        estimated_arrival_time: stop.estimated_arrival_time,
+        stop_type: stop.stop_type,
+      };
+    })
+    .filter((row): row is AllStopsRow => row !== null)
+    .sort((a, b) => a.route_name_en.localeCompare(b.route_name_en) || a.sequence - b.sequence);
+}
+
 export async function fetchRoute(routeId: string) {
   return supabase
     .from('routes')

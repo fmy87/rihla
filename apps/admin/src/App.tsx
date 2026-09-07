@@ -16,7 +16,7 @@ import AttendancePage from './pages/Attendance';
 import AlertsPage from './pages/Alerts';
 import ReportsPage from './pages/Reports';
 import SettingsPage from './pages/Settings';
-import PlaceholderPage from './pages/PlaceholderPage';
+import StopsPage from './pages/Stops';
 import './lib/i18n';
 
 export default function App() {
@@ -89,10 +89,7 @@ export default function App() {
             path="/stops"
             element={
               <ProtectedRoute>
-                <PlaceholderPage
-                  titleKey="stops"
-                  phaseLabel="Routes → open a route (stops are managed inside the Route Editor's map + stop list, not as a separate screen)"
-                />
+                <StopsPage />
               </ProtectedRoute>
             }
           />
