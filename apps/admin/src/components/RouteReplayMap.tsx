@@ -1,6 +1,7 @@
 import { GoogleMap, Marker, Polyline, useJsApiLoader } from '@react-google-maps/api';
 import { useTranslation } from 'react-i18next';
 import type { ReplayPoint, ReplayStop } from '../lib/queries/replay';
+import { GOOGLE_MAPS_LOADER_ID, GOOGLE_MAPS_LIBRARIES } from '../lib/googleMapsConfig';
 
 interface RouteReplayMapProps {
   points: ReplayPoint[];
@@ -14,8 +15,9 @@ const containerStyle = { width: '100%', height: '480px', borderRadius: '16px' };
 export default function RouteReplayMap({ points, stops, currentIndex }: RouteReplayMapProps) {
   const { t, i18n } = useTranslation('common');
   const { isLoaded } = useJsApiLoader({
-    id: 'school-bus-google-map',
+    id: GOOGLE_MAPS_LOADER_ID,
     googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
+    libraries: GOOGLE_MAPS_LIBRARIES,
     language: i18n.language,
   });
 

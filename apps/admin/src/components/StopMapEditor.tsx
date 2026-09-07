@@ -9,8 +9,8 @@ import {
 } from '@react-google-maps/api';
 import { useTranslation } from 'react-i18next';
 import type { RouteStopRow } from '../lib/queries/routes';
+import { GOOGLE_MAPS_LOADER_ID, GOOGLE_MAPS_LIBRARIES } from '../lib/googleMapsConfig';
 
-const LIBRARIES: ('places')[] = ['places'];
 const MUSCAT_CENTER = { lat: 23.588, lng: 58.3829 };
 const containerStyle = { width: '100%', height: '520px', borderRadius: '16px' };
 
@@ -36,9 +36,9 @@ export default function StopMapEditor({
 }: StopMapEditorProps) {
   const { t, i18n } = useTranslation(['routes', 'common']);
   const { isLoaded } = useJsApiLoader({
-    id: 'school-bus-google-map',
+    id: GOOGLE_MAPS_LOADER_ID,
     googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
-    libraries: LIBRARIES,
+    libraries: GOOGLE_MAPS_LIBRARIES,
     language: i18n.language,
   });
 

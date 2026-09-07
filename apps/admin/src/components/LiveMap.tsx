@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { GoogleMap, Marker, InfoWindow, useJsApiLoader } from '@react-google-maps/api';
 import { useTranslation } from 'react-i18next';
 import type { LiveBusPosition, ActiveRouteRow } from '../lib/queries/dashboard';
+import { GOOGLE_MAPS_LOADER_ID, GOOGLE_MAPS_LIBRARIES } from '../lib/googleMapsConfig';
 
 interface LiveMapProps {
   positions: LiveBusPosition[];
@@ -22,8 +23,9 @@ export default function LiveMap({ positions, routes }: LiveMapProps) {
   const [selectedBusId, setSelectedBusId] = useState<string | null>(null);
 
   const { isLoaded } = useJsApiLoader({
-    id: 'school-bus-google-map',
+    id: GOOGLE_MAPS_LOADER_ID,
     googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
+    libraries: GOOGLE_MAPS_LIBRARIES,
     language: i18n.language, // map labels follow the app's selected language
   });
 
